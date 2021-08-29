@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+    <!--  filter-->
+    <filter>
+        <filter-name>crossOriginFilter</filter-name>
+        <filter-class>com.join.web_server.filter.CrossOriginFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>crossOriginFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>encodeFilter</filter-name>
+        <filter-class>com.join.web_server.filter.EncodeFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>encodeFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+
+    <filter>
+        <filter-name>loginFilter</filter-name>
+        <filter-class>com.join.web_server.filter.LoginFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>loginFilter</filter-name>
+        <url-pattern>/cart/*</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>LoginFilter</filter-name>
+        <filter-class>com.join.web_server.filter.LoginFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>LoginFilter</filter-name>
+        <url-pattern>/seller/*</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>sellerFilter</filter-name>
+        <filter-class>com.join.web_server.filter.SellerFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>sellerFilter</filter-name>
+        <url-pattern>/seller/*</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>sellFilter</filter-name>
+        <filter-class>com.join.web_server.filter.SellerFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>sellFilter</filter-name>
+        <url-pattern>/order/seller/*</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>buyerFilter</filter-name>
+        <filter-class>com.join.web_server.filter.BuyerFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>buyerFilter</filter-name>
+        <url-pattern>/cart/*</url-pattern>
+    </filter-mapping>
+
+    <!--  controller-->
+    <servlet>
+        <servlet-name>show</servlet-name>
+        <servlet-class>com.join.web_server.controller.DrinkController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>show</servlet-name>
+        <url-pattern>/drink/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>seller</servlet-name>
+        <servlet-class>com.join.web_server.controller.DrinkController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>seller</servlet-name>
+        <url-pattern>/seller/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>picture</servlet-name>
+        <servlet-class>com.join.web_server.controller.FileController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>picture</servlet-name>
+        <url-pattern>/file/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>user</servlet-name>
+        <servlet-class>com.join.web_server.controller.UserController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>user</servlet-name>
+        <url-pattern>/user/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>order</servlet-name>
+        <servlet-class>com.join.web_server.controller.OrderController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>order</servlet-name>
+        <url-pattern>/order/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>cart</servlet-name>
+        <servlet-class>com.join.web_server.controller.CartController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>cart</servlet-name>
+        <url-pattern>/cart/*</url-pattern>
+    </servlet-mapping>
+</web-app>
